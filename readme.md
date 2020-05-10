@@ -1,4 +1,4 @@
-# cpcx
-This repo will soon contain the source code for an updated version of CPC, designed to be cross platform.
+# cpc
+Original C# source code for CPC. Only compiles easily on Windows, but should run on Mono with some modifications. Not maintained.
 
-The original C# source code can be found in the "cpc" branch.
+No assets included.
