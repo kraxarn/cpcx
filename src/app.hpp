@@ -24,6 +24,7 @@ public:
 
 	App(const QString &name, AppType type);
 	App(const QString &name);
+	App();
 
 	QString name;
 	AppType type;

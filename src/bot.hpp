@@ -49,7 +49,6 @@ private:
 	SpeechBubble *speechBubble = nullptr;
 	QVector<unsigned int> updateTimes;
 	Settings cfg;
-	unsigned int totalMemory = 0;
 	QTimer timer;
 
 	/**

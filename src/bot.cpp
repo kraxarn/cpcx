@@ -7,8 +7,9 @@ Bot::Bot(UserInterface *ui, const Settings &settings) : ui(ui), cfg(settings),
 	energy(100.0)
 {
 	dataPath = "./Data";
-	totalMemory = getTotalMemory();
-	QTimer::connect(&timer, &QTimer::timeout, this, &Bot::timerTimeout);
+	QTimer::connect(&timer, &QTimer::timeout, [this]() {
+		timerTimeout();
+	});
 	timer.start(5000);
 }
 
@@ -323,4 +324,12 @@ QString Bot::usageLevelToString(UsageLevel level)
 		case UsageLevel::High:   return "High";
 	}
 	return "Unknown";
+}
+
+void Bot::updateAppRuntime(const App &app, int time)
+{
+}
+
+void Bot::updateEnergy(float energy)
+{
 }

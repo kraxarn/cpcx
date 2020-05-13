@@ -9,6 +9,10 @@ App::App(const QString &name) : App(name, getType(name))
 {
 }
 
+App::App() : App(QString())
+{
+}
+
 QString App::getTimeRunning()
 {
 	auto s = secondsRunning;
