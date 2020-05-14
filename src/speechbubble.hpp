@@ -1,12 +1,18 @@
 #pragma once
 
-#include <QString>
+#include "res/speech.xpm"
 
-class SpeechBubble
+#include <QString>
+#include <QLabel>
+
+class SpeechBubble : public QWidget
 {
 public:
-	void setDisplayMessage(const QString &text);
-	void show();
-	void hide();
+	SpeechBubble(QWidget *parent = nullptr);
+
+	void setDisplayMessage(const QString &message);
 	bool isSaying();
+
+private:
+	QLabel	*text;
 };

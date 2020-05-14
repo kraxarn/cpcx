@@ -11,7 +11,6 @@
 #include "res/excited.xpm"
 #include "res/restless.xpm"
 #include "res/sleepy.xpm"
-#include "res/speech.xpm"
 #include "res/thankful.xpm"
 
 #include <QString>
