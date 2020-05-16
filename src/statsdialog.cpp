@@ -19,4 +19,6 @@ StatsDialog::StatsDialog(const QVector<App> &apps, const QString &mood,
 		table->addTopLevelItem(new QTreeWidgetItem({
 			app.name, app.getTimeRunning()
 		}));
+	setLayout(layout);
+	setWindowTitle("Stats");
 }
