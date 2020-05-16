@@ -18,13 +18,13 @@ void Settings::load()
 		else if (key == "IgnoreWhenFullscreen")
 			ignoreWhenFullscreen = value.toBool();
 		else if (key == "Personality")
-			personality = value.value<Personality>();
+			personality = (Personality) value.toInt();
 		else if (key == "Voice")
-			voice = value.value<Voice>();
+			voice = (Voice) value.toInt();
 		else if (key == "Notification")
-			notification = value.value<Notification>();
+			notification = (Notification) value.toInt();
 		else if (key == "ComplainAbout")
-			complainAbout = value.value<ComplainAbout>();
+			complainAbout = (ComplainAbout) value.toInt();
 		qDebug() << "warning: unknown setting:" << key;
 	}
 	file.close();
