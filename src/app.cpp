@@ -13,7 +13,7 @@ App::App() : App(QString())
 {
 }
 
-QString App::getTimeRunning()
+QString App::getTimeRunning() const
 {
 	auto s = secondsRunning;
 	auto m = 0;
@@ -82,7 +82,7 @@ QString App::toString()
 {
 	return QString("%1 %2").arg(name).arg(getTimeRunning());
 }
-QString App::getTypeString()
+QString App::getTypeString() const
 {
 	switch (type)
 	{

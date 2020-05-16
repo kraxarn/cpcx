@@ -29,12 +29,12 @@ public:
 	QString name;
 	AppType type;
 
-	QString getTimeRunning();
+	QString getTimeRunning() const;
 	unsigned int getMinutesRemaining();
 	void addRuntime(unsigned int seconds);
 	static AppType getType(const QString &appName);
 	QString toString();
-	QString getTypeString();
+	QString getTypeString() const;
 
 private:
 	unsigned int secondsRunning;
