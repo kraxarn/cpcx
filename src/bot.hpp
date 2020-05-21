@@ -22,13 +22,14 @@
 #include <QTimer>
 #include <QThread>
 #include <QElapsedTimer>
+#include <QFileInfo>
 
 #define AUDIO_FORMAT "m4a"
 
 class Bot
 {
 public:
-	Bot(UserInterface *ui, const Settings &settings);
+	Bot(UserInterface *ui, SpeechBubble *speechBubble, const Settings &settings);
 
 	QString dataPath;
 

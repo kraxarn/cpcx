@@ -1,6 +1,9 @@
 #include "bot.hpp"
 
-Bot::Bot(UserInterface *ui, const Settings &settings) : ui(ui), cfg(settings),
+Bot::Bot(UserInterface *ui, SpeechBubble *speechBubble, const Settings &settings)
+	: ui(ui),
+	cfg(settings),
+	speechBubble(speechBubble),
 	// Default mood is restless (50%)
 	mood(50.0),
 	// Default energy is full (100%)

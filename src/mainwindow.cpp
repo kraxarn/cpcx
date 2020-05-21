@@ -6,9 +6,9 @@ MainWindow::MainWindow()
 	background = new QLabel(this);
 	setCentralWidget(background);
 	//setWindowFlags(Qt::FramelessWindowHint);
-	bot = new Bot(this, Settings());
-	new TrayIcon(*bot, this);
 	speechBubble = new SpeechBubble();
+	bot = new Bot(this, speechBubble, Settings());
+	new TrayIcon(*bot, this);
 	speechBubble->show();
 }
 
