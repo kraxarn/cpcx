@@ -117,7 +117,8 @@ QStringList Bot::getRunningProcesses()
 QStringList Bot::executePs(QStringList args)
 {
 	QProcess process;
-	process.execute("/usr/bin/ps", args);
+	process.start("/usr/bin/ps", args);
+	process.waitForFinished();
 	return QString(process.readAllStandardOutput()).split('\n');
 }
 
