@@ -9,7 +9,7 @@ Bot::Bot(UserInterface *ui, SpeechBubble *speechBubble, const Settings &settings
 	// Default energy is full (100%)
 	energy(100.0)
 {
-	dataPath = "./Data";
+	dataPath = "Data";
 	QTimer::connect(&timer, &QTimer::timeout, [this]() {
 		timerTimeout();
 	});
