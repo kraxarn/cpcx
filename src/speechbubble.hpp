@@ -4,6 +4,8 @@
 
 #include <QString>
 #include <QLabel>
+#include <QGuiApplication>
+#include <QScreen>
 
 class SpeechBubble : public QWidget
 {

@@ -7,7 +7,8 @@ MainWindow::MainWindow()
 	move(screenSize.width(), screenSize.height() * 0.75);
 	background = new QLabel(this);
 	setCentralWidget(background);
-	//setWindowFlags(Qt::FramelessWindowHint);
+	setWindowFlags(Qt::FramelessWindowHint);
+	setAttribute(Qt::WA_TranslucentBackground);
 	speechBubble = new SpeechBubble();
 	bot = new Bot(this, speechBubble, Settings());
 	new TrayIcon(*bot, this);

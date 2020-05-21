@@ -4,12 +4,16 @@
 
 SpeechBubble::SpeechBubble(QWidget *parent) : QWidget(parent)
 {
+	setWindowFlags(Qt::FramelessWindowHint);
+	setAttribute(Qt::WA_TranslucentBackground);
 	auto background = new QLabel(this);
 	QPixmap speech(speech_xpm);
 	background->setPixmap(speech);
 	resize(speech.size());
+	auto screenSize = QGuiApplication::screens()[0]->size();
+	move(screenSize.width() - 370, (screenSize.height() * 0.75) - 140);
 
-	text = new QLabel("This is some really long sample text in order to properly try out text wrapping.", this);
+	text = new QLabel(this);
 	text->move(PADDING, 0);
 	text->resize(size().width() - (PADDING * 2),
 		size().height() - (PADDING * 2));
