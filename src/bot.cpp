@@ -255,7 +255,7 @@ void Bot::show(const QString &fileName)
 					hide();
 				});
 				player.setMedia(QUrl::fromLocalFile(QString("%1.%2")
-					.arg(fileName).arg(AUDIO_FORMAT)));
+					.arg(QFileInfo(fileName).absoluteFilePath()).arg(AUDIO_FORMAT)));
 				player.setVolume(90);
 				player.play();
 			}
