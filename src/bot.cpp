@@ -101,7 +101,7 @@ unsigned int Bot::getRamUsage()
 	for (auto &line : executePs({"-eo", "size"}))
 		total += line.toUInt();
 	// ps prints in kb, we want mb
-	return total / 1000;
+	return total / 1024;
 }
 
 unsigned int Bot::getTotalMemory()
@@ -120,7 +120,7 @@ unsigned int Bot::getTotalMemory()
 	memInfo.close();
 	if (total == 0)
 		return 1;
-	return total / 1000;
+	return total / 1024;
 }
 
 QStringList Bot::getRunningProcesses()
@@ -195,7 +195,7 @@ void Bot::timerTimeout()
 		updateAppRuntime(iter.next().value(), 5);
 	// Check cpu and ram
 	auto cpuUsage = getCpuUsage();
-	auto ramUsage = getRamUsage() / getTotalMemory();
+	auto ramUsage = ((float) getRamUsage() / getTotalMemory()) * 100;
 	auto avgUsage = (cpuUsage + ramUsage) / 2;
 
 	auto cpuLevel = toUsageLevel(cpuUsage);
