@@ -87,7 +87,7 @@ float Bot::getCpuUsage()
 	for (auto &line : executePs({"-eo", "c"}))
 		total += line.toUInt();
 	if (total == 0)
-		total = std::thread::hardware_concurrency();
+		return 1.f;
 	// On error, this will divide by 0
 	return (float) total / std::thread::hardware_concurrency();
 }
