@@ -278,9 +278,8 @@ void Bot::show(const QString &fileName)
 	}
 }
 
-void Bot::showSpeechBubble(const QString &text)
+void Bot::showSpeechBubble()
 {
-	speechBubble->setDisplayMessage(text);
 	speechBubble->show();
 }
 

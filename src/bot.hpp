@@ -88,7 +88,7 @@ private:
 	QPixmap getMoodBitmap();
 	UsageLevel toUsageLevel(unsigned int usage);
 	QString usageLevelToString(UsageLevel level);
-	void showSpeechBubble(const QString &text = QString());
+	void showSpeechBubble();
 	void hideSpeechBubble();
 	void updateMood(int value);
 	void updateAppRuntime(const App &app, int time);
