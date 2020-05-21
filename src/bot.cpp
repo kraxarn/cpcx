@@ -273,7 +273,7 @@ void Bot::show(const QString &fileName)
 		}
 		position -= 3;
 		ui->moveWindow(-3, 0);
-		QThread::msleep(1);
+		QThread::msleep(10);
 	}
 }
 
@@ -299,7 +299,7 @@ void Bot::hide()
 		}
 		position += 3;
 		ui->moveWindow(3, 0);
-		QThread::msleep(1);
+		QThread::msleep(10);
 	}
 }
 
