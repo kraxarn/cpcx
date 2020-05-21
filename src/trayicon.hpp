@@ -2,6 +2,7 @@
 
 #include "res/icon.xpm"
 #include "settingsdialog.hpp"
+#include "debugdialog.hpp"
 
 #include <QSystemTrayIcon>
 #include <QMenu>
@@ -10,5 +11,5 @@
 class TrayIcon : public QSystemTrayIcon
 {
 public:
-	TrayIcon(QObject *parent = nullptr);
+	TrayIcon(const Bot &bot, QObject *parent = nullptr);
 };

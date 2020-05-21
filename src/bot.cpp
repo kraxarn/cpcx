@@ -76,7 +76,7 @@ QString Bot::getCurrentEnergyString()
 	return QString::number(energy, 'g', 2);
 }
 
-QString Bot::getMoodModifier()
+QString Bot::getMoodModifier() const
 {
 	return mood < 50 ? "Bad" : "Good";
 }
@@ -231,7 +231,7 @@ void Bot::show(const QString &fileName)
 	// Update mood in ui
 	ui->setBackground(getMoodBitmap());
 	// Show
-	ui->setVisible(true);
+	ui->setWindowVisible(true);
 
 	while (true)
 	{
@@ -279,7 +279,7 @@ void Bot::hide()
 	{
 		if (position > 0)
 		{
-			ui->setVisible(false);
+			ui->setWindowVisible(false);
 			return;
 		}
 		position += 3;

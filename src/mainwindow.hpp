@@ -5,9 +5,18 @@
 
 #include <QMainWindow>
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, public UserInterface
 {
+	Q_OBJECT
+
 public:
 	MainWindow();
-	SpeechBubble *speechBubble;
+	void setBackground(const QPixmap &background) override;
+	void moveWindow(int x, int y) override;
+	void setWindowVisible(bool visible) override;
+
+private:
+	QLabel			*background;
+	SpeechBubble	*speechBubble;
+	Bot				*bot;
 };

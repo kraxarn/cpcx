@@ -35,7 +35,7 @@ public:
 	QVector<App> getRunningApps();
 	QString getCurrentMoodString();
 	QString getCurrentEnergyString();
-	QString getMoodModifier();
+	QString getMoodModifier() const;
 	void show(const QString &fileName = QString());
 	void hide();
 	void say(const QString &type, const QString &moodModifier = QString());
