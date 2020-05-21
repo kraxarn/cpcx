@@ -258,7 +258,6 @@ void Bot::show(const QString &fileName)
 			if (!fileName.isEmpty())
 			{
 				// Currently no tts
-				QMediaPlayer player;
 				QMediaPlayer::connect(&player, &QMediaPlayer::stateChanged, [this](QMediaPlayer::State state) {
 					if (state == QMediaPlayer::PlayingState)
 						return;

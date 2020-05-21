@@ -50,6 +50,7 @@ private:
 	QVector<unsigned int> updateTimes;
 	Settings cfg;
 	QTimer timer;
+	QMediaPlayer player;
 
 	/**
 	 * Energy 0-100%
