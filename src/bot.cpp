@@ -109,7 +109,18 @@ unsigned int Bot::getTotalMemory()
 	QFile memInfo("/proc/meminfo");
 	memInfo.open(QIODevice::ReadOnly);
 	// Assume total memory is first line in kb
-	return memInfo.readAll().split('\n')[0].split(' ')[1].toUInt() / 1000;
+	auto total = 0u;
+	auto ok = false;
+	for (auto &val : memInfo.readAll().split('\n')[0].split(' '))
+	{
+		total = QString(val).toUInt(&ok);
+		if (ok)
+			break;
+	}
+	memInfo.close();
+	if (total == 0)
+		return 1;
+	return total / 1000;
 }
 
 QStringList Bot::getRunningProcesses()
