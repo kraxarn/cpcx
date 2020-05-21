@@ -303,8 +303,11 @@ void Bot::say(const QString &type, const QString &moodModifier)
 	qDebug() << "say:" << type;
 	// Get how many voice lines we have
 	// Type can be Music/Running
-	auto path = QString("%1/Voice/Default/%2/%3/").arg(dataPath).arg(moodMod).arg(type);
-	auto lines = QString(QFile(QString("%1/lines.txt").arg(path)).readAll()).split('\n');
+	auto path = QString("%1/Voice/Default/%2/%3").arg(dataPath).arg(moodMod).arg(type);
+	QFile linesFile(QString("%1/lines.txt").arg(path));
+	linesFile.open(QIODevice::ReadOnly);
+	auto lines = linesFile.readAll().split('\n');
+	linesFile.close();
 	// Get random line
 	auto ran = rng->bounded(lines.length());
 	// Load message
