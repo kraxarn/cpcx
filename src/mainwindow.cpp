@@ -12,7 +12,6 @@ MainWindow::MainWindow()
 	speechBubble = new SpeechBubble();
 	bot = new Bot(this, speechBubble, Settings());
 	new TrayIcon(*bot, this);
-	speechBubble->show();
 }
 
 void MainWindow::setBackground(const QPixmap &background)
