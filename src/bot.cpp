@@ -316,7 +316,7 @@ void Bot::say(const QString &type, const QString &moodModifier)
 	// Load message
 	auto msg = lines.at(ran);
 	speechBubble->setDisplayMessage(msg);
-	show(QString("%1%2").arg(path).arg(ran));
+	show(QString("%1/%2").arg(path).arg(ran));
 }
 
 void Bot::updateMood(int value)
