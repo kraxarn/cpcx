@@ -4,6 +4,8 @@
 #include "speechbubble.hpp"
 
 #include <QMainWindow>
+#include <QGuiApplication>
+#include <QScreen>
 
 class MainWindow : public QMainWindow, public UserInterface
 {

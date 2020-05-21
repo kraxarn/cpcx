@@ -3,6 +3,8 @@
 MainWindow::MainWindow()
 {
 	setFixedSize(192, 192);
+	auto screenSize = QGuiApplication::screens()[0]->size();
+	move(screenSize.width(), screenSize.height() * 0.75);
 	background = new QLabel(this);
 	setCentralWidget(background);
 	//setWindowFlags(Qt::FramelessWindowHint);
@@ -19,7 +21,7 @@ void MainWindow::setBackground(const QPixmap &background)
 
 void MainWindow::moveWindow(int x, int y)
 {
-	move(x, y);
+	move(pos().x() + x, pos().y() + y);
 }
 
 void MainWindow::setWindowVisible(bool visible)
